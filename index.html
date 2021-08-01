@@ -47,7 +47,7 @@
             <div class="box-alert">
                 <div class="box-inside" id="boxalert">
                     <div class="alert alert-warning" role="alert">
-                        <p><strong>Result: </strong> You should check in on some of those fields below.
+                        <p><strong>Result: </strong> <span id="boxtext"></span>
                             <button id="myBtn" onClick="$('#boxalert').hide();" type="button" class="close"
                                 aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -209,10 +209,10 @@
                     // do something with the text response 
                     console.log(text)
                     if (text[0] === "[1]") {
-                        iframe.p.innerHTML = "You have 100% chances of heart stroke";
+                        document.getElementById("boxtext").innerHTML = "You have 100% chances of heart stroke";
                     }
                     else
-                        iframe.p.innerHTML = "Patient will not get stroke";
+                        document.getElementById("boxtext").innerHTML = "Patient will not get stroke";
                 })
             )
         }
