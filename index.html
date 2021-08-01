@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+        }
+
+        /* .box-form{
+            width: 50%;
+        } */
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="box">
+            <div class="box-form">
+                <form class="form-horizontal" name="inputform" id="okay">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Heart Rate Predictor</legend>
+
+                        <!-- Gender -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="gender">Gender</label>
+                            <div class="col-md-4">
+                                <select id="gender" name="gender" class="form-control">
+                                    <option value="Male">Male</option>
+                                    <option value="Femal">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Age-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="age">Age</label>
+                            <div class="col-md-4">
+                                <input id="age" name="age" type="text" placeholder="Input Age"
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <!-- Hypertension -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hypertension">Hypertension</label>
+                            <div class="col-md-4">
+                                <select id="hypertension" name="hypertension" class="form-control">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Heart Disease -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="heart_disease">Heart Disease</label>
+                            <div class="col-md-4">
+                                <select id="heart_disease" name="heart_disease" class="form-control">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Ever Married -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ever_married">Ever Married (But Don't!)</label>
+                            <div class="col-md-4">
+                                <select id="ever_married" name="ever_married" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Work Type -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="work_type">Work Type</label>
+                            <div class="col-md-4">
+                                <select id="work_type" name="work_type" class="form-control">
+                                    <option value="Private">Private</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Residence Type -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Residence_type">Residence Type</label>
+                            <div class="col-md-4">
+                                <select id="Residence_type" name="Residence_type" class="form-control">
+                                    <option value="Urban">Urban</option>
+                                    <option value="Rural">Rural</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Avg Glucose Level-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="avg_glucose_level">Avg Glucose Level</label>
+                            <div class="col-md-4">
+                                <input id="avg_glucose_level" name="avg_glucose_level" type="text"
+                                    placeholder="Input Sugar" class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <!-- BMI-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="bmi">BMI</label>
+                            <div class="col-md-4">
+                                <input id="bmi" name="bmi" type="text" placeholder="Input BMI"
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <!-- Smoking Status -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="smoking_status">Smoking Status</label>
+                            <div class="col-md-4">
+                                <select id="smoking_status" name="smoking_status" class="form-control">
+                                    <option value="formerly smoked">Formerly Smoked</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="singlebutton"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+
+            <iframe id="output" name="votar"></iframe>
+
+        </div>
+
+    </section>
+
+    <script>
+        // Find all forms on the page
+        for (let f of document.querySelectorAll('form'))
+            // do the below whenever any of them submit
+            f.addEventListener('submit', submitViaAjax);
+        function submitViaAjax(e) {
+            e.preventDefault();
+            var iframe = document.getElementById("output");
+            var formEl = document.forms.okay;
+            var formData = new FormData(formEl);
+            const url = "https://rapihs.dhruvtuteja.tech/heart_stroke?";
+
+            fetch(url + new URLSearchParams(formData), {
+
+                method: "GET",
+
+                // })
+            }).then(
+                response => response.json().then(function (text) {
+                    // do something with the text response 
+                    console.log(text)
+                    if (text[0] === "[1]")
+                        iframe.contentDocument.body.innerHTML = "You have 100% chances of heart stroke";
+                    else
+                        iframe.contentDocument.body.innerHTML = "You have 0% chances of heart stroke";
+                })
+            )
+        }
+    </script>
+</body>
+
+</html>
