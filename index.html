@@ -38,6 +38,10 @@
             z-index: 999;
             display: none;
         }
+
+        .box-form{
+            min-width:700px;
+        }
     </style>
 </head>
 
@@ -219,7 +223,7 @@
 
         document.getElementById("myBtn").addEventListener("click", function () {
             const formEl = document.forms.apiform;
-            formEl.style.cssText = ""
+            formEl.style.cssText = "min-width:700px;"
         });
     </script>
 
