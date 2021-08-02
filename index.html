@@ -12,37 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
         integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-    <style>
-        .box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            z-index: 1;
-        }
-
-        .box-alert {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .box-inside {
-            width: 500px;
-            z-index: 999;
-            display: none;
-        }
-
-        .box-form{
-            width:50%;
-        }
-    </style>
 </head>
 
 <body>
@@ -65,7 +39,7 @@
                     <fieldset>
 
                         <!-- Form Name -->
-                        <legend>Heart Rate Predictor</legend>
+                        <legend><i class="fas fa-heartbeat"></i> Heart Stroke Predictor</legend>
 
                         <!-- Gender -->
                         <div class="form-group">
@@ -188,44 +162,7 @@
 
     </section>
 
-    <script>
-        // Find all forms on the page
-        for (let f of document.querySelectorAll('form'))
-            // do the below whenever any of them submit
-            f.addEventListener('submit', submitViaAjax);
-        function submitViaAjax(e) {
-            e.preventDefault();
-            const iframe = document.getElementById("boxalert");
-            $("#boxalert").show();
-            iframe.style['display'] = 'block';
-            const formEl = document.forms.apiform;
-            formEl.style.cssText = 'filter: blur(8px); -webkit-filter: blur(8px);'
-            const formData = new FormData(formEl);
-            const url = "https://rapihs.dhruvtuteja.tech/heart_stroke?";
-
-            fetch(url + new URLSearchParams(formData), {
-
-                method: "GET",
-
-                // })
-            }).then(
-                response => response.json().then(function (text) {
-                    // do something with the text response 
-                    console.log(text)
-                    if (text[0] === "[1]") {
-                        document.getElementById("boxtext").innerHTML = "Patient will get stroke";
-                    }
-                    else
-                        document.getElementById("boxtext").innerHTML = "Patient will not get stroke";
-                })
-            )
-        }
-
-        document.getElementById("myBtn").addEventListener("click", function () {
-            const formEl = document.forms.apiform;
-            formEl.style.cssText = ""
-        });
-    </script>
+    <script src="./script.js"></script>
 
 </body>
 
